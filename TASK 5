@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather Forecast</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      /* Beautiful mixed gradient background */
+      background: linear-gradient(135deg, #f6d365, #fda085, #a18cd1, #fbc2eb);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .weather-container {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .search-box {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      margin-bottom: 30px;
+    }
+
+    .search-box input,
+    .search-box button {
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+
+    .search-box button {
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .search-box button:hover {
+      background-color: #0056b3;
+    }
+
+    .weather-card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      width: 320px;
+      margin: auto;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .weather-card img {
+      width: 80px;
+      margin-bottom: 10px;
+    }
+
+    .weather-card h1 {
+      font-size: 48px;
+      margin: 10px 0;
+      color: #007bff;
+    }
+
+    .weather-card h2 {
+      font-size: 24px;
+      margin: 5px 0;
+      color: #333;
+    }
+
+    .weather-card p {
+      font-size: 18px;
+      color: #555;
+    }
+
+    .weather-details {
+      list-style: none;
+      padding: 0;
+      margin-top: 15px;
+      color: #444;
+      font-size: 16px;
+    }
+
+    .weather-details li {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <main class="weather-container">
+    <div class="search-box">
+      <input type="text" id="city" placeholder="Enter City" />
+      <button id="check">Get Weather</button>
+    </div>
+
+    <div class="weather-card" id="weatherCard">
+      <img src="https://cdn-icons-png.flaticon.com/512/1163/1163624.png" alt="Weather Icon" id="tempIcon" />
+      <h2 id="weatherCountry">City, Country</h2>
+      <h1 id="temperature">0°C</h1>
+      <p id="weatherDescription">Weather Description</p>
+
+      <ul class="weather-details">
+        <li id="feelsLike">Feels Like: 0°C</li>
+        <li id="humidity">Humidity: 0%</li>
+        <li id="longitude">Longitude: 0.00</li>
+        <li id="latitude">Latitude: 0.00</li>
+      </ul>
+    </div>
+  </main>
+
+  <script>
+    const weatherData = {
+      coimbatore: {
+        country: "India",
+        temp: 30,
+        feels_like: 32,
+        humidity: 60,
+        description: "Cloudy",
+        lon: 76.96,
+        lat: 11.01,
+        icon: "https://cdn-icons-png.flaticon.com/512/1163/1163624.png"
+      },
+      thoothukudi: {
+        country: "India",
+        temp: 33,
+        feels_like: 36,
+        humidity: 65,
+        description: "Hot and Humid",
+        lon: 78.13,
+        lat: 8.76,
+        icon: "https://cdn-icons-png.flaticon.com/512/869/869869.png"
+      },
+      madurai: {
+        country: "India",
+        temp: 36,
+        feels_like: 39,
+        humidity: 55,
+        description: "Sunny",
+        lon: 78.12,
+        lat: 9.92,
+        icon: "https://cdn-icons-png.flaticon.com/512/4814/4814268.png"
+      },
+      chennai: {
+        country: "India",
+        temp: 34,
+        feels_like: 38,
+        humidity: 65,
+        description: "Hot and Humid",
+        lon: 80.27,
+        lat: 13.08,
+        icon: "https://cdn-icons-png.flaticon.com/512/869/869869.png"
+      },
+      bangalore: {
+        country: "India",
+        temp: 28,
+        feels_like: 30,
+        humidity: 70,
+        description: "Pleasant",
+        lon: 77.59,
+        lat: 12.97,
+        icon: "https://cdn-icons-png.flaticon.com/512/1163/1163624.png"
+      }
+    };
+
+    document.getElementById('check').addEventListener('click', () => {
+      const cityInput = document.getElementById('city').value.trim().toLowerCase();
+
+      if (weatherData[cityInput]) {
+        const data = weatherData[cityInput];
+
+        document.getElementById('weatherCountry').textContent = `${capitalize(cityInput)}, ${data.country}`;
+        document.getElementById('temperature').innerHTML = `${data.temp}°C`;
+        document.getElementById('weatherDescription').textContent = data.description;
+        document.getElementById('feelsLike').textContent = `Feels Like: ${data.feels_like}°C`;
+        document.getElementById('humidity').textContent = `Humidity: ${data.humidity}%`;
+        document.getElementById('longitude').textContent = `Longitude: ${data.lon}`;
+        document.getElementById('latitude').textContent = `Latitude: ${data.lat}`;
+        document.getElementById('tempIcon').src = data.icon;
+      } else {
+        alert("City not found. Try Coimbatore, Thoothukudi, Madurai, Chennai, or Bangalore.");
+      }
+    });
+
+    function capitalize(str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+  </script>
+</body>
+</html>
