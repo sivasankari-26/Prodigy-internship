@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: purple; /* Background color */
+      color: white; /* Text readable on purple */
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Hi, I'm Sivasankari S</h1>
+      <p class="headline">Aspiring Software Engineer</p>
+    </div>
+  </header>
+
+  <section class="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        I am a passionate web developer with gaining experience in HTML, CSS, JavaScript, and backend technologies.<br>I enjoy building responsive and interactive web applications.<br> I have worked on various personal and academic projects, always aiming to deliver clean and efficient code.
+      </p>
+      <h3>Background</h3>
+      <p>
+        I am currently pursuing my BE in CSE at National Engineering College. I have a keen interest in full-stack development and love to explore new technologies.
+      </p>
+      <h3>Education</h3>
+      <ul>
+        <li>2024 - Present: BE in Computer Science and Engineering, National Engineering College, Kovilpatti - 628503.</li>
+        <li>2022: Pre-University - Subbiah Vidyalayam Girls Higher Secondary School, Tuticorin - 628003.</li>
+      </ul>
+      <h3>Professional Experience</h3>
+      <ul>
+        <li>Internship at Prodigy Infotech – As a Web Developer</li>
+      </ul>
+    </div>
+  </section>
+</body>
+</html>
