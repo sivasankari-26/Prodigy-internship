@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Snacky - Interactive Snack Ordering</title>
+  <title>Yummy Bites - Interactive Snack Ordering</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #8888e0, #6060f3);
+      background: pink; /* ✅ Background changed */
       color: #fbef14;
       scroll-behavior: smooth;
     }
@@ -171,12 +171,12 @@
       color: lightgreen;
       margin-top: 10px;
     }
-    #feedback-list ul {
-    list-style: disc;
-    padding-left: 560px;
-    text-align: left;
-    }
 
+    #feedback-list ul {
+      list-style: disc;
+      padding-left: 560px;
+      text-align: left;
+    }
 
     @media (max-width: 768px) {
       nav ul {
@@ -199,7 +199,7 @@
 <body>
 
   <header id="navbar">
-    <div class="logo">SNACKY</div>
+    <div class="logo">YUMMY BITES</div> <!-- ✅ Name changed -->
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
@@ -212,7 +212,7 @@
 
   <!-- Hero -->
   <section class="hero" id="home">
-    <h1>🍉🍕 WELCOME TO SNACKY 🍔🥤</h1>
+    <h1>🍉🍕 WELCOME TO YUMMY BITES 🍔🥤</h1> <!-- ✅ Name changed -->
     <p>Your favorite snacks, just a click away!</p>
   </section>
 
